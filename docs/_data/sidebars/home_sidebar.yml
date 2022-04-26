@@ -10,8 +10,11 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module name here
+      title: Classes
       url: core.html
+    - output: web,pdf
+      title: Title
+      url: main.html
     output: web
     title: celverapi
   output: web

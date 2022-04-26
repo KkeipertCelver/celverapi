@@ -1,6 +1,6 @@
 ---
 
-title: module name here
+title: Classes
 
 
 keywords: fastai
@@ -32,6 +32,30 @@ nb_path: "00_core.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.showdoc</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">sktime.forecasting.base</span> <span class="kn">import</span> <span class="n">ForecastingHorizon</span>
+<span class="kn">from</span> <span class="nn">sktime.forecasting.ets</span> <span class="kn">import</span> <span class="n">AutoETS</span>
+<span class="kn">from</span> <span class="nn">sktime.forecasting.naive</span> <span class="kn">import</span> <span class="n">NaiveForecaster</span>
+<span class="kn">from</span> <span class="nn">sktime.forecasting.trend</span> <span class="kn">import</span> <span class="n">TrendForecaster</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -40,7 +64,138 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="imprimir" class="doc_header"><code>imprimir</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>imprimir</code>(<strong><code>a</code></strong>)</p>
+<h2 id="TimeSeries" class="doc_header"><code>class</code> <code>TimeSeries</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L16" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeSeries</code>(<strong><code>data</code></strong>:<code>DataFrame</code>, <strong><code>date_col</code></strong>:<code>str</code>, <strong><code>id_col</code></strong>:<code>str</code>, <strong><code>value_col</code></strong>:<code>str</code>)</p>
+</blockquote>
+<p>The Timeseries objects has 4 attributes</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="TimeseriesModel" class="doc_header"><code>class</code> <code>TimeseriesModel</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L61" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeseriesModel</code>() :: <code>ABC</code></p>
+</blockquote>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="NaiveForecast" class="doc_header"><code>class</code> <code>NaiveForecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L81" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NaiveForecast</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
+</blockquote>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="TrendForecast" class="doc_header"><code>class</code> <code>TrendForecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L115" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TrendForecast</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
+</blockquote>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="ForecastingTask" class="doc_header"><code>class</code> <code>ForecastingTask</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L149" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ForecastingTask</code>(<strong><code>train</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>out_of_sample</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>validation</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>forecast_horizon</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -56,81 +211,6 @@ nb_path: "00_core.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imprimir</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Test
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">imprimir</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;Test&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Test
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">C:\Users\KEVINK~1\AppData\Local\Temp/ipykernel_17300/2258780313.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">assert</span> imprimir<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Test&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">==</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Test&#39;</span>
-
-<span class="ansi-red-intense-fg ansi-bold">AssertionError</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}

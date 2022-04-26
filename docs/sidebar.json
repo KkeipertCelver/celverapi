@@ -1,6 +1,7 @@
 {
   "celverapi": {
     "Overview": "/",
-    "module name here": "core.html"
+    "Classes": "core.html",
+    "Title": "main.html"
   }
 }
