@@ -37,10 +37,9 @@ def unique_dataframe_values(id_column: str):
 
     """"
     This Function returns a List of DataFrames from every unique Value in the ID Column.
-    Parameter:
 
-    -   id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located.
-                             This will split the DataFrame into smaller DataFrames from every single unique value in the column.
+    -   id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located. This will split the DataFrame into smaller DataFrames from every single unique value in the column.
+
     """
 
     list_of_df = []
@@ -61,6 +60,17 @@ list_of_df = unique_dataframe_values(id_column)
 # ---- The DataFrames are saved in 2 Differents Lists, one for TRAIN DF and other for TEST DF ----
 
 def split_into_train_test_dataframe(date_col: str, date_to_split: str):
+
+    """
+    The function splits the DataFrames into a Traing and Test sets.
+    The DataFrames are saved in 2 Differents Lists, one for TRAIN DF and other for TEST DF.
+    It returs two lists: list_of_trained_df, list_of_test_df
+
+    -   list_of_df (List) : Lists of DataFrames with only one ID.
+    -   date_col (String) : Name of the Colum where the Date is located.
+    -   date_to_split (String) : YYYY-MM-DD from where we want to split the DataFrames into Training and Test sets. Example, the Train set will be every day until 2017-08-01. And the Test set from 2017-08-01 (inclusive), until the end of the DataFrame.
+
+    """
 
     list_df_train = []
     list_df_val = []
