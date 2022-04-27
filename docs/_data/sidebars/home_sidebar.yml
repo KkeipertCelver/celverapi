@@ -15,6 +15,9 @@ entries:
     - output: web,pdf
       title: Main
       url: main.html
+    - output: web,pdf
+      title: Weather
+      url: weather.html
     output: web
     title: celverapi
   output: web

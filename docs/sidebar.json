@@ -2,6 +2,7 @@
   "celverapi": {
     "Overview": "/",
     "Classes": "core.html",
-    "Main": "main.html"
+    "Main": "main.html",
+    "Weather": "weather.html"
   }
 }
