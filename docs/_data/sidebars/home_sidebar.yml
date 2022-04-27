@@ -13,7 +13,7 @@ entries:
       title: Classes
       url: core.html
     - output: web,pdf
-      title: Title
+      title: Main
       url: main.html
     output: web
     title: celverapi

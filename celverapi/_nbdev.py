@@ -6,9 +6,25 @@ index = {"TimeSeries": "00_core.ipynb",
          "TimeseriesModel": "00_core.ipynb",
          "NaiveForecast": "00_core.ipynb",
          "TrendForecast": "00_core.ipynb",
-         "ForecastingTask": "00_core.ipynb"}
+         "ETSModel": "00_core.ipynb",
+         "ForecastingTask": "00_core.ipynb",
+         "df": "01_main.ipynb",
+         "id_column": "01_main.ipynb",
+         "date_col": "01_main.ipynb",
+         "date_to_split": "01_main.ipynb",
+         "value_col": "01_main.ipynb",
+         "forecast_horizon": "01_main.ipynb",
+         "unique_dataframe_values": "01_main.ipynb",
+         "list_of_df": "01_main.ipynb",
+         "split_into_train_test_dataframe": "01_main.ipynb",
+         "converting_dataframes_into_objects": "01_main.ipynb",
+         "ets_func": "01_main.ipynb",
+         "naive_func": "01_main.ipynb",
+         "trend_func": "01_main.ipynb",
+         "main": "01_main.ipynb"}
 
-modules = ["core.py"]
+modules = ["core.py",
+           "main.py"]
 
 doc_url = "https://KkeipertCelver.github.io/celverapi/"
 
