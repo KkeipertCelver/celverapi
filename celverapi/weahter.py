@@ -18,8 +18,14 @@ ContentType="json"
 
 def get_forecast(city: str, start_date: str, end_date: str, UnitGroup: str):
 
-    "The function takes 4 Parameters: *City = The name of the city you want to Forecast (String)  *Start_date = The starting date YYYY-MM-DD (String) *End_date = The ending date YYYY-MM-DD (String) *UnitGroup = metric"
+    """
+    The function takes 4 Parameters:
+    - City(String) : The name of the city you want to Forecast
+    - Start_date(String) : The starting date YYYY-MM-DD
+    - End_date(String) : The ending date YYYY-MM-DD (String)
+    - UnitGroup = metric"
 
+    """
     url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}/{start_date}/{end_date}?unitGroup={UnitGroup}&include=current&key={ApiKey}&contentType={ContentType}"
     response = requests.get(url).json()
 
