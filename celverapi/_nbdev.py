@@ -21,10 +21,14 @@ index = {"TimeSeries": "00_core.ipynb",
          "ets_func": "01_main.ipynb",
          "naive_func": "01_main.ipynb",
          "trend_func": "01_main.ipynb",
-         "main": "01_main.ipynb"}
+         "main": "01_main.ipynb",
+         "ApiKey": "10_weather.ipynb",
+         "ContentType": "10_weather.ipynb",
+         "get_forecast": "10_weather.ipynb"}
 
 modules = ["core.py",
-           "main.py"]
+           "main.py",
+           "weahter.py"]
 
 doc_url = "https://KkeipertCelver.github.io/celverapi/"
 
