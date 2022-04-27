@@ -6,7 +6,6 @@ __all__ = ['ApiKey', 'ContentType', 'get_forecast']
 
 from nbdev.showdoc import *
 import pandas as pd
-import json
 import requests
 
 # Cell
