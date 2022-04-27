@@ -32,15 +32,16 @@ value_col = "sales"             #Name of the Column where the values to messure 
 forecast_horizon = 15           #Amount of steps to forecast
 
 # Cell
-""""
-This Function returns a List of DataFrames from every unique Value in the ID Column.
-Parameter:
-
--   id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located.
-                         This will split the DataFrame into smaller DataFrames from every single unique value in the column.
-"""
 
 def unique_dataframe_values(id_column: str):
+
+    """"
+    This Function returns a List of DataFrames from every unique Value in the ID Column.
+    Parameter:
+
+    -   id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located.
+                             This will split the DataFrame into smaller DataFrames from every single unique value in the column.
+    """
 
     list_of_df = []
 
