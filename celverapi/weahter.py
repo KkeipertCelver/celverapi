@@ -20,6 +20,7 @@ def get_forecast(city: str, start_date: str, end_date: str, UnitGroup: str):
 
     """
     The function takes 4 Parameters:
+
     - City(String) : The name of the city you want to Forecast
     - Start_date(String) : The starting date YYYY-MM-DD
     - End_date(String) : The ending date YYYY-MM-DD (String)
