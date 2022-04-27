@@ -59,7 +59,7 @@ list_of_df = unique_dataframe_values(id_column)
 # ---- Splitting the DataFrames into Train and Test  ----
 # ---- The DataFrames are saved in 2 Differents Lists, one for TRAIN DF and other for TEST DF ----
 
-def split_into_train_test_dataframe(date_col: str, date_to_split: str):
+def split_into_train_test_dataframe(list_of_df: list, date_col: str, date_to_split: str):
 
     """
     The function splits the DataFrames into a Traing and Test sets.
