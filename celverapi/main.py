@@ -190,7 +190,7 @@ def naive_func(ft: ForecastingTask):
 
     final_dataframe = prediction.to_frame(name='Qty')
     final_dataframe['ID'] = id
-    final_dataframe['Datum'] = datum
+    final_dataframe['Date'] = datum
     final_dataframe['Model'] = 'Naive Model'
 
     return final_dataframe
@@ -213,7 +213,7 @@ def trend_func(ft: ForecastingTask):
 
     final_dataframe = prediction.to_frame(name='Qty')
     final_dataframe['ID'] = id
-    final_dataframe['Datum'] = datum
+    final_dataframe['Date'] = datum
     final_dataframe['Model'] = 'Trend Model'
 
     return final_dataframe
