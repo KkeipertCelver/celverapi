@@ -220,36 +220,63 @@ def trend_func(ft: ForecastingTask):
 
 
 # Cell
-def forecast():
-    with concurrent.futures.ProcessPoolExecutor() as executor:
+def forecast(list_of_models: list, dict_of_forecasting_tasks: dict):
 
-        # Run, for example various TimeSeries simultainly for Arima Model
-        ets_prediction = executor.map(ets_func, dict_of_forecasting_tasks.values())
-        naive_prediction = executor.map(naive_func, dict_of_forecasting_tasks.values())
-        theta_prediction = executor.map(trend_func, dict_of_forecasting_tasks.values())
+    """
+    This Function allows the user to forecast multiple Timeseires and multiple Models simultaneously using a multiprocessing aproach.
+    It returns a DataFrame with all the models and Timeseries passed in the function.
+
+    -   list_of_models(List) : A list with the Forecasting models to apply. For the moment only "ets", "naive" and trend".
+    -   dict_of_forecasting_tasks(Dict) : A dictionary with the Forecasting tasks. Can be created with the function "creating_forecasting_task_dict()".
+
+    ATENTION! This functions needs to run inside of the if __name__ == '__main__' condition.
+
+    """
+
+
+    with concurrent.futures.ProcessPoolExecutor() as executor:
 
         # List with all the Forecasted Objects
         final_results_ets = []
         final_results_naive = []
         final_results_trend = []
 
-        #Appending the objects to the list
-        for result in ets_prediction:
-            final_results_ets.append(result)
 
-        for result in naive_prediction:
-            final_results_naive.append(result)
+        final_df = []
 
-        for result in theta_prediction:
-            final_results_trend.append(result)
+        # Run, for example various TimeSeries simultainly for Arima Model
 
-        result_ets = pd.concat(final_results_ets)
-        result_naive = pd.concat(final_results_naive)
-        result_trend = pd.concat(final_results_trend)
+        if "ets" in list_of_models:
 
-        print(result_ets)
-        print(result_naive)
-        print(result_trend)
+            ets_prediction = executor.map(ets_func, dict_of_forecasting_tasks.values())
 
-if __name__ == '__main__':
-     forecast()
+            for result in ets_prediction:
+                final_results_ets.append(result)
+
+            result_ets = pd.concat(final_results_ets)
+            final_df.append(result_ets)
+
+        if "naive" in list_of_models:
+
+            naive_prediction = executor.map(naive_func, dict_of_forecasting_tasks.values())
+
+            for result in naive_prediction:
+                final_results_naive.append(result)
+
+            result_naive = pd.concat(final_results_naive)
+            final_df.append(result_naive)
+
+        if "trend" in list_of_models:
+
+            theta_prediction = executor.map(trend_func, dict_of_forecasting_tasks.values())
+
+            for result in theta_prediction:
+                final_results_trend.append(result)
+
+            result_trend = pd.concat(final_results_trend)
+            final_df.append(result_trend)
+
+        result = pd.concat(final_df)
+
+
+    return result

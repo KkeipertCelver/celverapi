@@ -300,8 +300,15 @@ It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Mod
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="forecast" class="doc_header"><code>forecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>forecast</code>()</p>
+<h4 id="forecast" class="doc_header"><code>forecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>forecast</code>(<strong><code>list_of_models</code></strong>:<code>list</code>, <strong><code>dict_of_forecasting_tasks</code></strong>:<code>dict</code>)</p>
 </blockquote>
+<p>This Function allows the user to forecast multiple Timeseires and multiple Models simultaneously using a multiprocessing aproach.
+It returns a DataFrame with all the models and Timeseries passed in the function.</p>
+<ul>
+<li>list_of_models(List) : A list with the Forecasting models to apply. For the moment only "ets", "naive" and trend".</li>
+<li>dict_of_forecasting_tasks(Dict) : A dictionary with the Forecasting tasks. Can be created with the function "creating_forecasting_task_dict()".</li>
+</ul>
+<p>ATENTION! This functions needs to run inside of the if <strong>name</strong> == '<strong>main</strong>' condition.</p>
 
 </div>
 
