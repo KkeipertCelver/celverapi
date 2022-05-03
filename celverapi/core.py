@@ -45,19 +45,19 @@ class TimeSeries():
         # Gets the number of unique series inside the dataset
 
         return self.data[self.id_col].unique().size
-    show_doc(get_no_series)
+
     #Adding function to get the ID from the DataFrame
 
     def get_id(self):
 
         return self.data.iloc[0][self.id_col]
-    show_doc(get_id)
+
     #Adding function to get the Datum Values from the DataFrame
 
     def get_datum(self):
 
         return self.data[self.date_col].unique()
-    show_doc(get_datum)
+
 
     def plot_subset(self, col_wrap):
 
@@ -65,7 +65,7 @@ class TimeSeries():
 
         g = sns.FacetGrid(self.data, col=self.id_col, col_wrap=col_wrap)
         g.map(sns.lineplot, self.date_col, self.value_col)
-    show_doc(plot_subset)
+
 
 # Cell
 class TimeseriesModel(ABC):
@@ -108,14 +108,14 @@ class NaiveForecast(TimeseriesModel):
 
         value_col = self.forecasting_task.value_col
         return self.forecasting_task.train.data[value_col].reset_index(drop=True).squeeze()
-    show_doc(prepare_data)
+
 
     def fit(self):
 
         input_data = self.prepare_data()
         self.model = NaiveForecaster(strategy='last')
         self.model.fit(input_data)
-    show_doc(fit)
+
 
     def predict(self, mode = "val"):
 
@@ -123,11 +123,11 @@ class NaiveForecast(TimeseriesModel):
             predict_data = self.forecasting_task.validation.data
             forecasts = self.model.predict(predict_data.index)
             return(forecasts)
-    show_doc(predict)
+
 
     def refit(self):
         pass
-    show_doc(refit)
+
 
 # Cell
 class TrendForecast(TimeseriesModel):
@@ -144,14 +144,14 @@ class TrendForecast(TimeseriesModel):
 
         value_col = self.forecasting_task.value_col
         return self.forecasting_task.train.data[value_col].reset_index(drop=True).squeeze()
-    show_doc(prepare_data)
+
 
     def fit(self):
 
         input_data = self.prepare_data()
         self.model = TrendForecaster()
         self.model.fit(input_data)
-    show_doc(fit)
+
 
     def predict(self, mode = "val"):
 
@@ -159,11 +159,11 @@ class TrendForecast(TimeseriesModel):
             predict_data = self.forecasting_task.validation.data
             forecasts = self.model.predict(predict_data.index)
             return(forecasts)
-    show_doc(predict)
+
 
     def refit(self):
         pass
-    show_doc(refit)
+
 
 # Cell
 
@@ -182,14 +182,14 @@ class ETSModel(TimeseriesModel):
 
         value_col = self.forecasting_task.value_col
         return self.forecasting_task.train.data[value_col].reset_index(drop=True).squeeze()
-    show_doc(prepare_data)
+
 
     def fit(self):
 
         input_data = self.prepare_data()
         self.model = AutoETS()
         self.model.fit(input_data)
-    show_doc(fit)
+
 
     def predict(self, mode = "val"):
 
@@ -197,7 +197,7 @@ class ETSModel(TimeseriesModel):
             predict_data = self.forecasting_task.validation.data
             forecasts = self.model.predict(predict_data.index)
             return(forecasts)
-    show_doc(predict)
+
 
     def refit(self):
         pass
