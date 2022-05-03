@@ -45,18 +45,19 @@ class TimeSeries():
         # Gets the number of unique series inside the dataset
 
         return self.data[self.id_col].unique().size
-
+    show_doc(get_no_series)
     #Adding function to get the ID from the DataFrame
 
     def get_id(self):
 
         return self.data.iloc[0][self.id_col]
-
+    show_doc(get_no_series)
     #Adding function to get the Datum Values from the DataFrame
 
     def get_datum(self):
 
         return self.data[self.date_col].unique()
+    show_doc(get_no_series)
 
     def plot_subset(self, col_wrap):
 
@@ -64,9 +65,17 @@ class TimeSeries():
 
         g = sns.FacetGrid(self.data, col=self.id_col, col_wrap=col_wrap)
         g.map(sns.lineplot, self.date_col, self.value_col)
+    show_doc(get_no_series)
 
 # Cell
 class TimeseriesModel(ABC):
+
+    """
+    Abstract class.
+    Parent class from every Forecasting Model.
+
+    """
+
 
     @abstractmethod
     def prepare_data(self):
