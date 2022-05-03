@@ -339,7 +339,7 @@ To Forecast this TimeSeries, we need to call the forecast() function, where we n
 if __name__ == "__main__":
     final_result = forecast(['ets', 'naive', 'trend'], dict_of_forecasting_tasks)
 
-final_result
+final_result 
 ```
 
 
