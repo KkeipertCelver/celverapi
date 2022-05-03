@@ -225,4 +225,5 @@ if __name__ == "__main__":
     final_result = forecast(['ets', 'naive', 'trend'], dict_of_forecasting_tasks)
 
 #final_result 
+#Removing DF for index HTML
 ```

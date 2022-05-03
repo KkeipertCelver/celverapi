@@ -8,7 +8,6 @@ from nbdev.showdoc import *
 import pandas as pd
 import seaborn as sns
 from abc import ABC, abstractmethod
-from sktime.forecasting.base import ForecastingHorizon
 from sktime.forecasting.ets import AutoETS
 from sktime.forecasting.naive import NaiveForecaster
 from sktime.forecasting.trend import TrendForecaster
