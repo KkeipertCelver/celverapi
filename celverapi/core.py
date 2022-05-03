@@ -21,10 +21,10 @@ class TimeSeries():
 
     The Timeseries objects has 4 attributes:
 
-    - data : the DataFrame of the Timeseries
-    - id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located.
-    - date_column (String) : Name of the Colum where the Date is located.
-    - value_column (String) : Name of the Column where the values to messure are located.
+    - data (DataFrame) : the DataFrame of the Timeseries
+    - id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located
+    - date_column (String) : Name of the Colum where the Date is located
+    - value_column (String) : Name of the Column where the values to messure are located
 
     """
 
@@ -42,9 +42,9 @@ class TimeSeries():
         return self.data.head().to_string()
 
     def get_no_series(self):
-        """
-        Gets the number of unique series inside the dataset
-        """
+
+        # Gets the number of unique series inside the dataset
+
         return self.data[self.id_col].unique().size
 
     #Adding function to get the ID from the DataFrame
@@ -60,9 +60,9 @@ class TimeSeries():
         return self.data[self.date_col].unique()
 
     def plot_subset(self, col_wrap):
-        """
-        Plots some timeseries
-        """
+
+        # Plots some timeseries
+
         g = sns.FacetGrid(self.data, col=self.id_col, col_wrap=col_wrap)
         g.map(sns.lineplot, self.date_col, self.value_col)
 

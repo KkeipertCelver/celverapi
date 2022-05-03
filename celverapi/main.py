@@ -231,7 +231,7 @@ def forecast(list_of_models: list, dict_of_forecasting_tasks: dict):
     -   list_of_models(List) : A list with the Forecasting models to apply. For the moment only "ets", "naive" and trend".
     -   dict_of_forecasting_tasks(Dict) : A dictionary with the Forecasting tasks. Can be created with the function "creating_forecasting_task_dict()".
 
-    ATENTION! This functions needs to run inside of the if __name__ == '__main__' condition.
+    > Important: This function needs to run inside of the if __name__ == '__main__' condition.
 
     """
 

@@ -8,7 +8,7 @@
 
 ## How to use
 
-In this example we are going to use a DataFrame from 4 diferent grocery stores. 
+In this example we are going to use a DataFrame from 4 different grocery stores. 
 The idea is to Forecast various models, from every single store, simultaneously 
 
 ```python
