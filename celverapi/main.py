@@ -201,7 +201,7 @@ def trend_func(ft: ForecastingTask):
 
     """
     Function for the Trend Model.
-    It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Model
+    It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Model.
 
     - ft : ForecastingTask Object
 
