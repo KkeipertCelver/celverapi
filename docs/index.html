@@ -83,131 +83,10 @@ The idea is to Forecast various models, from every single store, simultaneously<
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;Data/example.parquet&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1">#df.head(10)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>date</th>
-      <th>store_nbr</th>
-      <th>family</th>
-      <th>sales</th>
-      <th>onpromotion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2013-01-01</td>
-      <td>6</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2013-01-01</td>
-      <td>7</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2013-01-01</td>
-      <td>8</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2013-01-01</td>
-      <td>9</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2013-01-02</td>
-      <td>6</td>
-      <td>GROCERY I</td>
-      <td>5535.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2013-01-02</td>
-      <td>7</td>
-      <td>GROCERY I</td>
-      <td>4172.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2013-01-02</td>
-      <td>8</td>
-      <td>GROCERY I</td>
-      <td>5277.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2013-01-02</td>
-      <td>9</td>
-      <td>GROCERY I</td>
-      <td>7718.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2013-01-03</td>
-      <td>6</td>
-      <td>GROCERY I</td>
-      <td>4040.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2013-01-03</td>
-      <td>7</td>
-      <td>GROCERY I</td>
-      <td>3279.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-
-</div>
-
 </div>
 </div>
 
@@ -422,7 +301,7 @@ In this case the Train DF is going to be from the Start Date until the 31-07-201
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trained_timeseries</span><span class="p">,</span> <span class="n">valed_timeseries</span> <span class="o">=</span> <span class="n">converting_dataframes_into_objects</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;store_nbr&#39;</span><span class="p">,</span> <span class="s1">&#39;sales&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trained_timeseries</span><span class="p">,</span> <span class="n">valed_timeseries</span> <span class="o">=</span> <span class="n">converting_dataframes_into_objects</span><span class="p">(</span><span class="n">list_of_trained_df</span><span class="p">,</span> <span class="n">list_of_tested</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;store_nbr&#39;</span><span class="p">,</span> <span class="s1">&#39;sales&#39;</span><span class="p">)</span>
 <span class="n">trained_timeseries</span>
 </pre></div>
 
@@ -502,10 +381,10 @@ In this case the Train DF is going to be from the Start Date until the 31-07-201
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{6: &lt;celverapi.core.ForecastingTask at 0x148d64d8400&gt;,
- 7: &lt;celverapi.core.ForecastingTask at 0x148d64d8460&gt;,
- 8: &lt;celverapi.core.ForecastingTask at 0x148d64d8880&gt;,
- 9: &lt;celverapi.core.ForecastingTask at 0x148d64d8790&gt;}</pre>
+<pre>{6: &lt;celverapi.core.ForecastingTask at 0x1b36fdf2b20&gt;,
+ 7: &lt;celverapi.core.ForecastingTask at 0x1b36fdf2af0&gt;,
+ 8: &lt;celverapi.core.ForecastingTask at 0x1b36fdf2a30&gt;,
+ 9: &lt;celverapi.core.ForecastingTask at 0x1b36fdf2f70&gt;}</pre>
 </div>
 
 </div>
@@ -533,128 +412,10 @@ In this case the Train DF is going to be from the Start Date until the 31-07-201
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">final_result</span> <span class="o">=</span> <span class="n">forecast</span><span class="p">([</span><span class="s1">&#39;ets&#39;</span><span class="p">,</span> <span class="s1">&#39;naive&#39;</span><span class="p">,</span> <span class="s1">&#39;trend&#39;</span><span class="p">],</span> <span class="n">dict_of_forecasting_tasks</span><span class="p">)</span>
 
-<span class="n">final_result</span>
+<span class="c1">#final_result </span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Qty</th>
-      <th>ID</th>
-      <th>Date</th>
-      <th>Model</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>8344</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-01</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8348</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-02</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8352</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-03</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8356</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-04</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8360</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-05</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>8387</th>
-      <td>17776.977872</td>
-      <td>9</td>
-      <td>2017-08-11</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8391</th>
-      <td>17783.141263</td>
-      <td>9</td>
-      <td>2017-08-12</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8395</th>
-      <td>17789.304655</td>
-      <td>9</td>
-      <td>2017-08-13</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8399</th>
-      <td>17795.468047</td>
-      <td>9</td>
-      <td>2017-08-14</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8403</th>
-      <td>17801.631439</td>
-      <td>9</td>
-      <td>2017-08-15</td>
-      <td>Trend Model</td>
-    </tr>
-  </tbody>
-</table>
-<p>180 rows × 4 columns</p>
-</div></div>
-
-</div>
-
 </div>
 </div>
 

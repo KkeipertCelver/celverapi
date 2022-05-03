@@ -19,123 +19,8 @@ import pandas as pd
 
 ```python
 df = pd.read_parquet('Data/example.parquet')
-df.head(10)
+#df.head(10)
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>date</th>
-      <th>store_nbr</th>
-      <th>family</th>
-      <th>sales</th>
-      <th>onpromotion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2013-01-01</td>
-      <td>6</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2013-01-01</td>
-      <td>7</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2013-01-01</td>
-      <td>8</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2013-01-01</td>
-      <td>9</td>
-      <td>GROCERY I</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2013-01-02</td>
-      <td>6</td>
-      <td>GROCERY I</td>
-      <td>5535.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2013-01-02</td>
-      <td>7</td>
-      <td>GROCERY I</td>
-      <td>4172.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2013-01-02</td>
-      <td>8</td>
-      <td>GROCERY I</td>
-      <td>5277.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2013-01-02</td>
-      <td>9</td>
-      <td>GROCERY I</td>
-      <td>7718.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2013-01-03</td>
-      <td>6</td>
-      <td>GROCERY I</td>
-      <td>4040.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2013-01-03</td>
-      <td>7</td>
-      <td>GROCERY I</td>
-      <td>3279.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 Using the function unique_dataframe_values(), we are going to create a list of DataFrames from every unique ID value in the Main DataFrame. 
 In this case, we need a DataFrame from every Store.
@@ -280,7 +165,7 @@ list_of_trained_df
 After that, we will convert this DataFrames into TimeSeries objects and save them in their respective lists. 
 
 ```python
-trained_timeseries, valed_timeseries = converting_dataframes_into_objects('date', 'store_nbr', 'sales')
+trained_timeseries, valed_timeseries = converting_dataframes_into_objects(list_of_trained_df, list_of_tested, 'date', 'store_nbr', 'sales')
 trained_timeseries
 ```
 
@@ -325,10 +210,10 @@ dict_of_forecasting_tasks
 
 
 
-    {6: <celverapi.core.ForecastingTask at 0x148d64d8400>,
-     7: <celverapi.core.ForecastingTask at 0x148d64d8460>,
-     8: <celverapi.core.ForecastingTask at 0x148d64d8880>,
-     9: <celverapi.core.ForecastingTask at 0x148d64d8790>}
+    {6: <celverapi.core.ForecastingTask at 0x1b36fdf2b20>,
+     7: <celverapi.core.ForecastingTask at 0x1b36fdf2af0>,
+     8: <celverapi.core.ForecastingTask at 0x1b36fdf2a30>,
+     9: <celverapi.core.ForecastingTask at 0x1b36fdf2f70>}
 
 
 
@@ -339,117 +224,5 @@ To Forecast this TimeSeries, we need to call the forecast() function, where we n
 if __name__ == "__main__":
     final_result = forecast(['ets', 'naive', 'trend'], dict_of_forecasting_tasks)
 
-final_result 
+#final_result 
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Qty</th>
-      <th>ID</th>
-      <th>Date</th>
-      <th>Model</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>8344</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-01</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8348</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-02</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8352</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-03</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8356</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-04</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>8360</th>
-      <td>5234.366950</td>
-      <td>6</td>
-      <td>2017-08-05</td>
-      <td>ETS-Model</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>8387</th>
-      <td>17776.977872</td>
-      <td>9</td>
-      <td>2017-08-11</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8391</th>
-      <td>17783.141263</td>
-      <td>9</td>
-      <td>2017-08-12</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8395</th>
-      <td>17789.304655</td>
-      <td>9</td>
-      <td>2017-08-13</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8399</th>
-      <td>17795.468047</td>
-      <td>9</td>
-      <td>2017-08-14</td>
-      <td>Trend Model</td>
-    </tr>
-    <tr>
-      <th>8403</th>
-      <td>17801.631439</td>
-      <td>9</td>
-      <td>2017-08-15</td>
-      <td>Trend Model</td>
-    </tr>
-  </tbody>
-</table>
-<p>180 rows × 4 columns</p>
-</div>
-
-
