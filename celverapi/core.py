@@ -18,7 +18,7 @@ class TimeSeries():
 
     """
 
-    The Timeseries objects has 4 attributes:
+    The Timeseries object has 4 attributes:
 
     - data (DataFrame) : the DataFrame of the Timeseries
     - id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located
@@ -51,13 +51,13 @@ class TimeSeries():
     def get_id(self):
 
         return self.data.iloc[0][self.id_col]
-    show_doc(get_no_series)
+    show_doc(get_id)
     #Adding function to get the Datum Values from the DataFrame
 
     def get_datum(self):
 
         return self.data[self.date_col].unique()
-    show_doc(get_no_series)
+    show_doc(get_datum)
 
     def plot_subset(self, col_wrap):
 
@@ -65,7 +65,7 @@ class TimeSeries():
 
         g = sns.FacetGrid(self.data, col=self.id_col, col_wrap=col_wrap)
         g.map(sns.lineplot, self.date_col, self.value_col)
-    show_doc(get_no_series)
+    show_doc(plot_subset)
 
 # Cell
 class TimeseriesModel(ABC):
@@ -75,7 +75,6 @@ class TimeseriesModel(ABC):
     Parent class from every Forecasting Model.
 
     """
-
 
     @abstractmethod
     def prepare_data(self):
@@ -109,12 +108,14 @@ class NaiveForecast(TimeseriesModel):
 
         value_col = self.forecasting_task.value_col
         return self.forecasting_task.train.data[value_col].reset_index(drop=True).squeeze()
+    show_doc(prepare_data)
 
     def fit(self):
 
         input_data = self.prepare_data()
         self.model = NaiveForecaster(strategy='last')
         self.model.fit(input_data)
+    show_doc(fit)
 
     def predict(self, mode = "val"):
 
@@ -122,11 +123,11 @@ class NaiveForecast(TimeseriesModel):
             predict_data = self.forecasting_task.validation.data
             forecasts = self.model.predict(predict_data.index)
             return(forecasts)
-
+    show_doc(predict)
 
     def refit(self):
         pass
-
+    show_doc(refit)
 
 # Cell
 class TrendForecast(TimeseriesModel):
@@ -143,12 +144,14 @@ class TrendForecast(TimeseriesModel):
 
         value_col = self.forecasting_task.value_col
         return self.forecasting_task.train.data[value_col].reset_index(drop=True).squeeze()
+    show_doc(prepare_data)
 
     def fit(self):
 
         input_data = self.prepare_data()
         self.model = TrendForecaster()
         self.model.fit(input_data)
+    show_doc(fit)
 
     def predict(self, mode = "val"):
 
@@ -156,11 +159,11 @@ class TrendForecast(TimeseriesModel):
             predict_data = self.forecasting_task.validation.data
             forecasts = self.model.predict(predict_data.index)
             return(forecasts)
-
+    show_doc(predict)
 
     def refit(self):
         pass
-
+    show_doc(refit)
 
 # Cell
 
@@ -179,14 +182,14 @@ class ETSModel(TimeseriesModel):
 
         value_col = self.forecasting_task.value_col
         return self.forecasting_task.train.data[value_col].reset_index(drop=True).squeeze()
-
+    show_doc(prepare_data)
 
     def fit(self):
 
         input_data = self.prepare_data()
         self.model = AutoETS()
         self.model.fit(input_data)
-
+    show_doc(fit)
 
     def predict(self, mode = "val"):
 
@@ -194,7 +197,7 @@ class ETSModel(TimeseriesModel):
             predict_data = self.forecasting_task.validation.data
             forecasts = self.model.predict(predict_data.index)
             return(forecasts)
-
+    show_doc(predict)
 
     def refit(self):
         pass
@@ -203,7 +206,19 @@ class ETSModel(TimeseriesModel):
 # Cell
 class ForecastingTask():
 
-    def __init__(self, train: TimeSeries, out_of_sample: TimeSeries, validation: TimeSeries, forecast_horizon):
+    """
+
+    The ForecastingTask object has 4 attributes:
+
+    - train (TimeSeries) : Trained TimeSeries object
+    - out_of_sample (TimeSeries) : -
+    - validation (TimeSeries) : Testing/Validated TimeSeries object
+    - forecast_horizon (Integer) : Amount of steps to forecast
+
+    """
+
+
+    def __init__(self, train: TimeSeries, out_of_sample: TimeSeries, validation: TimeSeries, forecast_horizon: int):
 
         self.train= train
         self.out_of_sample= out_of_sample
