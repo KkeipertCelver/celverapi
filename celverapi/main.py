@@ -36,7 +36,7 @@ forecast_horizon = 15           #Amount of steps to forecast
 
 def unique_dataframe_values(id_column: str):
 
-    """"
+    """
     This Function returns a List of DataFrames from every unique Value in the ID Column.
 
     -   id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located. This will split the DataFrame into smaller DataFrames from every single unique value in the column.
@@ -89,13 +89,15 @@ list_df_train, list_df_val = split_into_train_test_dataframe(list_of_df, date_co
 
 # Cell
 
-def converting_dataframes_into_objects(date_column: str, id_column: str, value_column: str):
+def converting_dataframes_into_objects(list_df_train: list, list_df_val: list, date_column: str, id_column: str, value_column: str):
 
     """
     The function creates TimeSeries Object from the respective DataFrames
     The Objects are saved in 2 Differents Lists, one for TRAIN DF and other for TEST DF.
     It returs two lists: trained_timeseries, valed_timeseries
 
+    -   list_df_train : List of trained DataFrames
+    -   list_df_val (List) : List of tested DataFrames
     -   date_column (String) : Name of the Colum where the Date is located.
     -   id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located.
     -   value_column (String) : Name of the Column where the values to messure are located.
@@ -118,7 +120,7 @@ def converting_dataframes_into_objects(date_column: str, id_column: str, value_c
 
     return trained_ts, valed_ts
 
-trained_ts, valed_ts= converting_dataframes_into_objects(date_column, id_column, value_column)
+trained_ts, valed_ts= converting_dataframes_into_objects(list_df_train, list_df_val, date_column, id_column, value_column)
 
 # Cell
 

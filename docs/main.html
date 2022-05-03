@@ -56,8 +56,7 @@ nb_path: "01_main.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="unique_dataframe_values" class="doc_header"><code>unique_dataframe_values</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L37" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>unique_dataframe_values</code>(<strong><code>id_column</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>"
-This Function returns a List of DataFrames from every unique Value in the ID Column.</p>
+<p>This Function returns a List of DataFrames from every unique Value in the ID Column.</p>
 <ul>
 <li>id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located. This will split the DataFrame into smaller DataFrames from every single unique value in the column.</li>
 </ul>
@@ -129,12 +128,14 @@ It returs two lists: list_of_trained_df, list_of_test_df</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="converting_dataframes_into_objects" class="doc_header"><code>converting_dataframes_into_objects</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L92" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>converting_dataframes_into_objects</code>(<strong><code>date_column</code></strong>:<code>str</code>, <strong><code>id_column</code></strong>:<code>str</code>, <strong><code>value_column</code></strong>:<code>str</code>)</p>
+<h4 id="converting_dataframes_into_objects" class="doc_header"><code>converting_dataframes_into_objects</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L92" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>converting_dataframes_into_objects</code>(<strong><code>list_df_train</code></strong>:<code>list</code>, <strong><code>list_df_val</code></strong>:<code>list</code>, <strong><code>date_column</code></strong>:<code>str</code>, <strong><code>id_column</code></strong>:<code>str</code>, <strong><code>value_column</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>The function creates TimeSeries Object from the respective DataFrames
 The Objects are saved in 2 Differents Lists, one for TRAIN DF and other for TEST DF.
 It returs two lists: trained_timeseries, valed_timeseries</p>
 <ul>
+<li>list_df_train : List of trained DataFrames</li>
+<li>list_df_val (List) : List of tested DataFrames</li>
 <li>date_column (String) : Name of the Colum where the Date is located.</li>
 <li>id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located.</li>
 <li>value_column (String) : Name of the Column where the values to messure are located.</li>
@@ -168,7 +169,7 @@ It returs two lists: trained_timeseries, valed_timeseries</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="creating_forecasting_task_dict" class="doc_header"><code>creating_forecasting_task_dict</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>creating_forecasting_task_dict</code>(<strong><code>trained_ts</code></strong>:<code>list</code>, <strong><code>valed_ts</code></strong>:<code>list</code>, <strong><code>forecast_horizon</code></strong>:<code>int</code>)</p>
+<h4 id="creating_forecasting_task_dict" class="doc_header"><code>creating_forecasting_task_dict</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L127" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>creating_forecasting_task_dict</code>(<strong><code>trained_ts</code></strong>:<code>list</code>, <strong><code>valed_ts</code></strong>:<code>list</code>, <strong><code>forecast_horizon</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>The function creates a dictionary mapping the ID value with the respective ForecastingTask object.
 It returs a dictionary : dict_of_forecasting_tasks</p>
@@ -206,7 +207,7 @@ It returs a dictionary : dict_of_forecasting_tasks</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ets_func" class="doc_header"><code>ets_func</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ets_func</code>(<strong><code>ft</code></strong>:<a href="/celverapi/core.html#ForecastingTask"><code>ForecastingTask</code></a>)</p>
+<h4 id="ets_func" class="doc_header"><code>ets_func</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ets_func</code>(<strong><code>ft</code></strong>:<a href="/celverapi/core.html#ForecastingTask"><code>ForecastingTask</code></a>)</p>
 </blockquote>
 <p>Function for the ETS Model.
 It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Model</p>
@@ -235,7 +236,7 @@ It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Mod
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="naive_func" class="doc_header"><code>naive_func</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L175" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>naive_func</code>(<strong><code>ft</code></strong>:<a href="/celverapi/core.html#ForecastingTask"><code>ForecastingTask</code></a>)</p>
+<h4 id="naive_func" class="doc_header"><code>naive_func</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L177" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>naive_func</code>(<strong><code>ft</code></strong>:<a href="/celverapi/core.html#ForecastingTask"><code>ForecastingTask</code></a>)</p>
 </blockquote>
 <p>Function for the Naive Model.
 It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Model</p>
@@ -264,7 +265,7 @@ It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Mod
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="trend_func" class="doc_header"><code>trend_func</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L198" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>trend_func</code>(<strong><code>ft</code></strong>:<a href="/celverapi/core.html#ForecastingTask"><code>ForecastingTask</code></a>)</p>
+<h4 id="trend_func" class="doc_header"><code>trend_func</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L200" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>trend_func</code>(<strong><code>ft</code></strong>:<a href="/celverapi/core.html#ForecastingTask"><code>ForecastingTask</code></a>)</p>
 </blockquote>
 <p>Function for the Trend Model.
 It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Model</p>
@@ -300,7 +301,7 @@ It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Mod
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="forecast" class="doc_header"><code>forecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>forecast</code>(<strong><code>list_of_models</code></strong>:<code>list</code>, <strong><code>dict_of_forecasting_tasks</code></strong>:<code>dict</code>)</p>
+<h4 id="forecast" class="doc_header"><code>forecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>forecast</code>(<strong><code>list_of_models</code></strong>:<code>list</code>, <strong><code>dict_of_forecasting_tasks</code></strong>:<code>dict</code>)</p>
 </blockquote>
 <p>This Function allows the user to forecast multiple Timeseires and multiple Models simultaneously using a multiprocessing aproach.
 It returns a DataFrame with all the models and Timeseries passed in the function.</p>

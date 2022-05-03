@@ -16,15 +16,22 @@ from sktime.forecasting.trend import TrendForecaster
 # Cell
 
 class TimeSeries():
-    "The Timeseries objects has 4 attributes"
-    "data is the DataFrame of the Timeserie"
-    "date_col is the column of the DataFrame where the date is"
-    "value_col is the column of the DataFrame wehre the Qty is"
 
-    def __init__(self, data: pd.DataFrame, date_col: str, id_col: str, value_col: str):
+    """
+
+    The Timeseries objects has 4 attributes:
+
+    - data : the DataFrame of the Timeseries
+    - id_column (String) : Name of the Column from the DataFrame where the Unique IDs are located.
+    - date_column (String) : Name of the Colum where the Date is located.
+    - value_column (String) : Name of the Column where the values to messure are located.
+
+    """
+
+    def __init__(self, data: pd.DataFrame, date_column: str, id_col: str, value_col: str):
 
         self.data = data
-        self.date_col = date_col
+        self.date_col = date_column
         self.id_col = id_col
         self.value_col = value_col
 
