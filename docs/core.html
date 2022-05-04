@@ -47,7 +47,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TimeSeries" class="doc_header"><code>class</code> <code>TimeSeries</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L17" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeSeries</code>(<strong><code>data</code></strong>:<code>DataFrame</code>, <strong><code>date_column</code></strong>:<code>str</code>, <strong><code>id_col</code></strong>:<code>str</code>, <strong><code>value_col</code></strong>:<code>str</code>)</p>
+<h2 id="TimeSeries" class="doc_header"><code>class</code> <code>TimeSeries</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L18" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeSeries</code>(<strong><code>data</code></strong>:<code>DataFrame</code>, <strong><code>date_column</code></strong>:<code>str</code>, <strong><code>id_col</code></strong>:<code>str</code>, <strong><code>value_col</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>The Timeseries object has 4 attributes:</p>
 <ul>
@@ -85,7 +85,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TimeseriesModel" class="doc_header"><code>class</code> <code>TimeseriesModel</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L71" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeseriesModel</code>() :: <code>ABC</code></p>
+<h2 id="TimeseriesModel" class="doc_header"><code>class</code> <code>TimeseriesModel</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L72" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeseriesModel</code>() :: <code>ABC</code></p>
 </blockquote>
 <p>Abstract class.
 Parent class from every Forecasting Model.</p>
@@ -118,7 +118,7 @@ Parent class from every Forecasting Model.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="NaiveForecast" class="doc_header"><code>class</code> <code>NaiveForecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L97" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NaiveForecast</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
+<h2 id="NaiveForecast" class="doc_header"><code>class</code> <code>NaiveForecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L98" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NaiveForecast</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
 </blockquote>
 <p>Abstract class.
 Parent class from every Forecasting Model.</p>
@@ -151,7 +151,7 @@ Parent class from every Forecasting Model.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TrendForecast" class="doc_header"><code>class</code> <code>TrendForecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L133" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TrendForecast</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
+<h2 id="TrendForecast" class="doc_header"><code>class</code> <code>TrendForecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L134" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TrendForecast</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
 </blockquote>
 <p>Abstract class.
 Parent class from every Forecasting Model.</p>
@@ -184,7 +184,7 @@ Parent class from every Forecasting Model.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ETSModel" class="doc_header"><code>class</code> <code>ETSModel</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L170" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ETSModel</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
+<h2 id="ETSModel" class="doc_header"><code>class</code> <code>ETSModel</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L171" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ETSModel</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
 </blockquote>
 <p>Abstract class.
 Parent class from every Forecasting Model.</p>
@@ -217,7 +217,40 @@ Parent class from every Forecasting Model.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ForecastingTask" class="doc_header"><code>class</code> <code>ForecastingTask</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L207" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ForecastingTask</code>(<strong><code>train</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>out_of_sample</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>validation</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>forecast_horizon</code></strong>:<code>int</code>)</p>
+<h2 id="Arima" class="doc_header"><code>class</code> <code>Arima</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L208" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Arima</code>(<strong><code>forecasting_task</code></strong>) :: <a href="/celverapi/core.html#TimeseriesModel"><code>TimeseriesModel</code></a></p>
+</blockquote>
+<p>Abstract class.
+Parent class from every Forecasting Model.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="ForecastingTask" class="doc_header"><code>class</code> <code>ForecastingTask</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/core.py#L242" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ForecastingTask</code>(<strong><code>train</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>out_of_sample</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>validation</code></strong>:<a href="/celverapi/core.html#TimeSeries"><code>TimeSeries</code></a>, <strong><code>forecast_horizon</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>The ForecastingTask object has 4 attributes:</p>
 <ul>

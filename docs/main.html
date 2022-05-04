@@ -287,6 +287,35 @@ It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Mod
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="arima_func" class="doc_header"><code>arima_func</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>arima_func</code>(<strong><code>ft</code></strong>:<a href="/celverapi/core.html#ForecastingTask"><code>ForecastingTask</code></a>)</p>
+</blockquote>
+<p>Function for the Arima Model.
+It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Model.</p>
+<ul>
+<li>ft : ForecastingTask Object</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 </div>
     {% endraw %}
 
@@ -301,7 +330,7 @@ It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Mod
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="forecast" class="doc_header"><code>forecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>forecast</code>(<strong><code>list_of_models</code></strong>:<code>list</code>, <strong><code>dict_of_forecasting_tasks</code></strong>:<code>dict</code>)</p>
+<h4 id="forecast" class="doc_header"><code>forecast</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/main.py#L249" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>forecast</code>(<strong><code>list_of_models</code></strong>:<code>list</code>, <strong><code>dict_of_forecasting_tasks</code></strong>:<code>dict</code>)</p>
 </blockquote>
 <p>This Function allows the user to forecast multiple Timeseires and multiple Models simultaneously using a multiprocessing aproach.
 It returns a DataFrame with all the models and Timeseries passed in the function.</p>

@@ -3,7 +3,7 @@
 __all__ = ['df', 'id_column', 'date_column', 'date_to_split', 'value_column', 'forecast_horizon',
            'unique_dataframe_values', 'list_of_df', 'split_into_train_test_dataframe',
            'converting_dataframes_into_objects', 'creating_forecasting_task_dict', 'dict_of_forecasting_tasks',
-           'ets_func', 'naive_func', 'trend_func', 'forecast']
+           'ets_func', 'naive_func', 'trend_func', 'arima_func', 'forecast']
 
 # Cell
 
@@ -221,6 +221,30 @@ def trend_func(ft: ForecastingTask):
     return final_dataframe
 
 
+
+def arima_func(ft: ForecastingTask):
+
+    """
+    Function for the Arima Model.
+    It returns a DataFrame with the following columns: Qty(Predicted), ID, Date, Model.
+
+    - ft : ForecastingTask Object
+
+    """
+
+    arima = Arima(ft)
+    arima.fit()
+    prediction = arima.predict()
+    id = ft.train.get_id()
+    datum = ft.validation.get_datum()
+
+    final_dataframe = prediction.to_frame(name='Qty')
+    final_dataframe['ID'] = id
+    final_dataframe['Datum'] = datum
+    final_dataframe['Model'] = 'ARIMA Model'
+
+    return final_dataframe
+
 # Cell
 def forecast(list_of_models: list, dict_of_forecasting_tasks: dict):
 
@@ -242,7 +266,7 @@ def forecast(list_of_models: list, dict_of_forecasting_tasks: dict):
         final_results_ets = []
         final_results_naive = []
         final_results_trend = []
-
+        final_results_arima = []
 
         final_df = []
 
@@ -277,6 +301,16 @@ def forecast(list_of_models: list, dict_of_forecasting_tasks: dict):
 
             result_trend = pd.concat(final_results_trend)
             final_df.append(result_trend)
+
+        if "arima" in list_of_models:
+
+            arima_prediction = executor.map(arima_func, dict_of_forecasting_tasks.values())
+
+            for result in arima_prediction:
+                final_results_arima.append(result)
+
+            result_arima = pd.concat(final_results_arima)
+            final_df.append(result_arima)
 
         result = pd.concat(final_df)
 
