@@ -31,7 +31,7 @@ index = {"TimeSeries": "00_core.ipynb",
          "get_forecast": "10_weather.ipynb",
          "IDENTITY_PATH": "20_boardapi.ipynb",
          "QUERY_PATH": "20_boardapi.ipynb",
-         "Client": "21_boardstorage.ipynb",
+         "Client": "20_boardapi.ipynb",
          "query": "20_boardapi.ipynb",
          "cubes": "20_boardapi.ipynb",
          "entities": "20_boardapi.ipynb",
@@ -39,6 +39,7 @@ index = {"TimeSeries": "00_core.ipynb",
          "procedure_run": "20_boardapi.ipynb",
          "procedure_status": "20_boardapi.ipynb",
          "human_readable_size": "21_boardstorage.ipynb",
+         "ClientStorage": "21_boardstorage.ipynb",
          "list_directories_and_files": "21_boardstorage.ipynb",
          "delete_file": "21_boardstorage.ipynb",
          "download_file": "21_boardstorage.ipynb",
@@ -47,7 +48,9 @@ index = {"TimeSeries": "00_core.ipynb",
 
 modules = ["core.py",
            "main.py",
-           "weahter.py"]
+           "weahter.py",
+           "boardapi.py",
+           "boardstorage.py"]
 
 doc_url = "https://KkeipertCelver.github.io/celverapi/"
 

@@ -47,7 +47,7 @@ nb_path: "21_boardstorage.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="human_readable_size" class="doc_header"><code>human_readable_size</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L202" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>human_readable_size</code>(<strong><code>size</code></strong>, <strong><code>decimal_places</code></strong>=<em><code>2</code></em>)</p>
+<h4 id="human_readable_size" class="doc_header"><code>human_readable_size</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/boardstorage.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>human_readable_size</code>(<strong><code>size</code></strong>, <strong><code>decimal_places</code></strong>=<em><code>2</code></em>)</p>
 </blockquote>
 
 </div>
@@ -71,7 +71,7 @@ nb_path: "21_boardstorage.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Client" class="doc_header"><code>class</code> <code>Client</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L60" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Client</code>(<strong><code>sas_uri</code></strong>)</p>
+<h2 id="ClientStorage" class="doc_header"><code>class</code> <code>ClientStorage</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/boardstorage.py#L21" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ClientStorage</code>(<strong><code>sas_uri</code></strong>)</p>
 </blockquote>
 <p>simple client to access and execute basic operations on the Board Shared Storage</p>
 
@@ -103,7 +103,7 @@ nb_path: "21_boardstorage.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="list_directories_and_files" class="doc_header"><code>list_directories_and_files</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L226" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>list_directories_and_files</code>(<strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="list_directories_and_files" class="doc_header"><code>list_directories_and_files</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/boardstorage.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>list_directories_and_files</code>(<strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>List all files and directories in a Board Shared Storage path
 if no path specified, runs at root level</p>
@@ -136,7 +136,7 @@ if no path specified, runs at root level</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="delete_file" class="doc_header"><code>delete_file</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L236" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>delete_file</code>(<strong><code>azure_file</code></strong>, <strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="delete_file" class="doc_header"><code>delete_file</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/boardstorage.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>delete_file</code>(<strong><code>azure_file</code></strong>, <strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Delete a file from the Board Shared Storage</p>
 
@@ -168,7 +168,7 @@ if no path specified, runs at root level</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download_file" class="doc_header"><code>download_file</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L244" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_file</code>(<strong><code>azure_file</code></strong>, <strong><code>local_path</code></strong>, <strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="download_file" class="doc_header"><code>download_file</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/boardstorage.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_file</code>(<strong><code>azure_file</code></strong>, <strong><code>local_path</code></strong>, <strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Download a file from the Board Shared Storage
 If content is set to true, return the full content and not just reference to the file</p>
@@ -201,7 +201,7 @@ If content is set to true, return the full content and not just reference to the
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="upload_file" class="doc_header"><code>upload_file</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L253" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>upload_file</code>(<strong><code>azure_file</code></strong>, <strong><code>local_path</code></strong>, <strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="upload_file" class="doc_header"><code>upload_file</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/boardstorage.py#L65" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>upload_file</code>(<strong><code>azure_file</code></strong>, <strong><code>local_path</code></strong>, <strong><code>azure_dir</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -232,7 +232,7 @@ If content is set to true, return the full content and not just reference to the
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_file_size" class="doc_header"><code>get_file_size</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L259" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_file_size</code>(<strong><code>azure_file</code></strong>, <strong><code>azure_dir</code></strong>, <strong><code>readable</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="get_file_size" class="doc_header"><code>get_file_size</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/boardstorage.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_file_size</code>(<strong><code>azure_file</code></strong>, <strong><code>azure_dir</code></strong>, <strong><code>readable</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>return size in bytes of a file on the Board Shared Storage
 if readable set to True, return in a human readable format (e.g. 10GiB)</p>
