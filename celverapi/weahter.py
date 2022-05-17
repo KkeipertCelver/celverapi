@@ -58,8 +58,11 @@ QUERY_PATH = "/public/"
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 class Client():  # pylint: disable=too-few-public-methods
-    """simple client to run queries and processes using the Board APIs.
-    See related documentation when creating External Queries in a Board Datamodel"""
+    """
+    simple client to run queries and processes using the Board APIs.
+    See related documentation when creating External Queries in a Board Datamodel
+
+    """
 
     # initialize a new Client object - will retrieve and store bearer token
     def __init__(self, endpoint, client_id, client_secret, scope):
@@ -132,10 +135,20 @@ class Client():  # pylint: disable=too-few-public-methods
 
 # Cell
 
-def query(self, datamodel, query_name, query_string=""):
+def query(self, datamodel: str, query_name: str, query_string= str):
 
-        """Execute a datamodel external query and returns
-        a python dictionary with the data from Board"""
+        """
+        Execute a datamodel external query and returns
+        a python dictionary with the data from Board.
+
+        The Function takes 3 Parameters:
+
+        - datamodel(String) : Name of the Board Database
+        - query_name(String) : Name of the Query
+        - query_string(String) : Query in String Format
+
+
+        """
 
         query = QUERY_PATH + "/" + datamodel + "/query/" + query_name + query_string
 
@@ -143,9 +156,16 @@ def query(self, datamodel, query_name, query_string=""):
 
 # Cell
 
-def cubes(self, datamodel):
+def cubes(self, datamodel: str):
 
-    """Return list of cubes for specified datamodel"""
+    """
+    Return list of cubes for specified datamodel.
+
+    The Function takes 1 Parameter:
+
+    - datamodel(String) : Name of the Board Database
+
+    """
 
     query = QUERY_PATH + "/" + datamodel + "/schema/Cubes"
 
@@ -153,9 +173,16 @@ def cubes(self, datamodel):
 
 # Cell
 
-def entities(self,datamodel):
+def entities(self,datamodel: str):
 
-    """Return list of entities for specified datamodel"""
+    """
+    Return list of entities for specified datamodel.
+
+    The Function takes 1 Parameter:
+
+    - datamodel(String) : Name of the Board Database
+
+    """
 
     query = QUERY_PATH + "/" + datamodel + "/schema/Entities"
 
@@ -163,9 +190,17 @@ def entities(self,datamodel):
 
 # Cell
 
-def entity(self,datamodel,entity):
+def entity(self,datamodel: str,entity: str):
 
-    """Return entity members for specified entity"""
+    """
+    Return entity members for specified entity.
+
+    The Function takes 2 Parameters:
+
+    - datamodel(String) : Name of the Board Database
+    - entity(String) : Name of the specified entity
+
+    """
 
     query = QUERY_PATH + "/" + datamodel + "/schema/Entities/" + entity
 
@@ -173,9 +208,17 @@ def entity(self,datamodel,entity):
 
 # Cell
 
-def procedure_run(self,datamodel,procedure):
+def procedure_run(self,datamodel: str,procedure: str):
 
-    """Execute a Board Procedure and returns Session ID of the execution"""
+    """
+    Execute a Board Procedure and returns Session ID of the execution.
+
+    The Function takes 2 Parameters:
+
+    - datamodel(String) : Name of the Board Database
+    - procedure(String) : Board Procedure
+
+    """
 
     query = QUERY_PATH + "/" + datamodel + "/procedure/Execute/" + procedure
 
@@ -183,9 +226,17 @@ def procedure_run(self,datamodel,procedure):
 
 # Cell
 
-def procedure_status(self,datamodel,session):
+def procedure_status(self,datamodel: str ,session: str):
 
-    """Return status of the execution of a Board Procedure"""
+    """
+    Return status of the execution of a Board Procedure
+
+    The Function takes 2 Parameters:
+
+    - datamodel(String) : Name of the Board Database
+    - session(String) : Session
+
+    """
 
     query = QUERY_PATH + "/" + datamodel + "/procedure/Status/" + session
 

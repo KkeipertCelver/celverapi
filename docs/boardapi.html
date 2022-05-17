@@ -86,10 +86,16 @@ nb_path: "20_boardapi.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="query" class="doc_header"><code>query</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>query</code>(<strong><code>datamodel</code></strong>, <strong><code>query_name</code></strong>, <strong><code>query_string</code></strong>=<em><code>''</code></em>)</p>
+<h4 id="query" class="doc_header"><code>query</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>query</code>(<strong><code>datamodel</code></strong>:<code>str</code>, <strong><code>query_name</code></strong>:<code>str</code>, <strong><code>query_string</code></strong>=<em><code>str</code></em>)</p>
 </blockquote>
 <p>Execute a datamodel external query and returns
-a python dictionary with the data from Board</p>
+a python dictionary with the data from Board.</p>
+<p>The Function takes 3 Parameters:</p>
+<ul>
+<li>datamodel(String) : Name of the Board Database</li>
+<li>query_name(String) : Name of the Query</li>
+<li>query_string(String) : Query in String Format</li>
+</ul>
 
 </div>
 
@@ -119,9 +125,13 @@ a python dictionary with the data from Board</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="cubes" class="doc_header"><code>cubes</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L146" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cubes</code>(<strong><code>datamodel</code></strong>)</p>
+<h4 id="cubes" class="doc_header"><code>cubes</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cubes</code>(<strong><code>datamodel</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Return list of cubes for specified datamodel</p>
+<p>Return list of cubes for specified datamodel.</p>
+<p>The Function takes 1 Parameter:</p>
+<ul>
+<li>datamodel(String) : Name of the Board Database</li>
+</ul>
 
 </div>
 
@@ -151,9 +161,13 @@ a python dictionary with the data from Board</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entities" class="doc_header"><code>entities</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L156" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entities</code>(<strong><code>datamodel</code></strong>)</p>
+<h4 id="entities" class="doc_header"><code>entities</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entities</code>(<strong><code>datamodel</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Return list of entities for specified datamodel</p>
+<p>Return list of entities for specified datamodel.</p>
+<p>The Function takes 1 Parameter:</p>
+<ul>
+<li>datamodel(String) : Name of the Board Database</li>
+</ul>
 
 </div>
 
@@ -183,9 +197,14 @@ a python dictionary with the data from Board</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entity" class="doc_header"><code>entity</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L166" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entity</code>(<strong><code>datamodel</code></strong>, <strong><code>entity</code></strong>)</p>
+<h4 id="entity" class="doc_header"><code>entity</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entity</code>(<strong><code>datamodel</code></strong>:<code>str</code>, <strong><code>entity</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Return entity members for specified entity</p>
+<p>Return entity members for specified entity.</p>
+<p>The Function takes 2 Parameters:</p>
+<ul>
+<li>datamodel(String) : Name of the Board Database</li>
+<li>entity(String) : Name of the specified entity</li>
+</ul>
 
 </div>
 
@@ -215,9 +234,14 @@ a python dictionary with the data from Board</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="procedure_run" class="doc_header"><code>procedure_run</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>procedure_run</code>(<strong><code>datamodel</code></strong>, <strong><code>procedure</code></strong>)</p>
+<h4 id="procedure_run" class="doc_header"><code>procedure_run</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L211" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>procedure_run</code>(<strong><code>datamodel</code></strong>:<code>str</code>, <strong><code>procedure</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Execute a Board Procedure and returns Session ID of the execution</p>
+<p>Execute a Board Procedure and returns Session ID of the execution.</p>
+<p>The Function takes 2 Parameters:</p>
+<ul>
+<li>datamodel(String) : Name of the Board Database</li>
+<li>procedure(String) : Board Procedure</li>
+</ul>
 
 </div>
 
@@ -247,9 +271,14 @@ a python dictionary with the data from Board</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="procedure_status" class="doc_header"><code>procedure_status</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L186" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>procedure_status</code>(<strong><code>datamodel</code></strong>, <strong><code>session</code></strong>)</p>
+<h4 id="procedure_status" class="doc_header"><code>procedure_status</code><a href="https://github.com/KkeipertCelver/celverapi/tree/master/celverapi/weahter.py#L229" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>procedure_status</code>(<strong><code>datamodel</code></strong>:<code>str</code>, <strong><code>session</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Return status of the execution of a Board Procedure</p>
+<p>The Function takes 2 Parameters:</p>
+<ul>
+<li>datamodel(String) : Name of the Board Database</li>
+<li>session(String) : Session</li>
+</ul>
 
 </div>
 
