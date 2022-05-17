@@ -3,6 +3,8 @@
     "Overview": "/",
     "Classes": "core.html",
     "Main": "main.html",
-    "Weather": "weather.html"
+    "Weather": "weather.html",
+    "Board API": "boardapi.html",
+    "Board Storage  ": "boardstorage.html"
   }
 }

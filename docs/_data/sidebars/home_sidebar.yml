@@ -18,6 +18,12 @@ entries:
     - output: web,pdf
       title: Weather
       url: weather.html
+    - output: web,pdf
+      title: Board API
+      url: boardapi.html
+    - output: web,pdf
+      title: 'Board Storage  '
+      url: boardstorage.html
     output: web
     title: celverapi
   output: web
