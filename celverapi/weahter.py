@@ -143,9 +143,9 @@ def query(self, datamodel: str, query_name: str, query_string= str):
 
         The Function takes 3 Parameters:
 
-        - datamodel(String) : Name of the Board Database
-        - query_name(String) : Name of the Query
-        - query_string(String) : Query in String Format
+        -       datamodel(String) : Name of the Board Database
+        -       query_name(String) : Name of the Query
+        -       query_string(String) : Query in String Format
 
 
         """
@@ -163,7 +163,7 @@ def cubes(self, datamodel: str):
 
     The Function takes 1 Parameter:
 
-    - datamodel(String) : Name of the Board Database
+    -   datamodel(String) : Name of the Board Database
 
     """
 
@@ -180,7 +180,7 @@ def entities(self,datamodel: str):
 
     The Function takes 1 Parameter:
 
-    - datamodel(String) : Name of the Board Database
+    -   datamodel(String) : Name of the Board Database
 
     """
 
@@ -197,8 +197,8 @@ def entity(self,datamodel: str,entity: str):
 
     The Function takes 2 Parameters:
 
-    - datamodel(String) : Name of the Board Database
-    - entity(String) : Name of the specified entity
+    -   datamodel(String) : Name of the Board Database
+    -   entity(String) : Name of the specified entity
 
     """
 
@@ -215,8 +215,8 @@ def procedure_run(self,datamodel: str,procedure: str):
 
     The Function takes 2 Parameters:
 
-    - datamodel(String) : Name of the Board Database
-    - procedure(String) : Board Procedure
+    -   datamodel(String) : Name of the Board Database
+    -   procedure(String) : Board Procedure
 
     """
 
@@ -233,8 +233,8 @@ def procedure_status(self,datamodel: str ,session: str):
 
     The Function takes 2 Parameters:
 
-    - datamodel(String) : Name of the Board Database
-    - session(String) : Session
+    -   datamodel(String) : Name of the Board Database
+    -   session(String) : Session
 
     """
 
