@@ -6,7 +6,7 @@
 
 `pip install celverapi`
 
-## How to use
+## How to use the Forecasting API 
 
 In this example we are going to use a DataFrame from 4 different grocery stores. 
 The idea is to Forecast various models, from every single store, simultaneously 
@@ -227,3 +227,219 @@ if __name__ == "__main__":
 #final_result 
 #Removing DF for index HTML
 ```
+
+## How to use the Weather API 
+
+```python
+from celverapi.weahter import * 
+```
+
+First of all, you will need to assign your API Key from Visual Crosssing to the ApiKey variable 
+
+```python
+ApiKey='37QNHAHY6SEXQ4N3R8MMQYZ3T'
+```
+
+In order to get a DataFrame from a particular Weather Forecast, you just need to call the get_forecast() function with the required parameters and assing it to a variable.
+In this particular example, we are going to get the Weather Forecast for the City of Hamburg from 17-05-2022 until 22-05-2022
+
+```python
+dataframe = get_forecast("Hamburg", "2022-05-17", "2022-05-22")
+dataframe
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime</th>
+      <th>datetimeEpoch</th>
+      <th>tempmax</th>
+      <th>tempmin</th>
+      <th>temp</th>
+      <th>feelslikemax</th>
+      <th>feelslikemin</th>
+      <th>feelslike</th>
+      <th>dew</th>
+      <th>humidity</th>
+      <th>...</th>
+      <th>sunrise</th>
+      <th>sunriseEpoch</th>
+      <th>sunset</th>
+      <th>sunsetEpoch</th>
+      <th>moonphase</th>
+      <th>conditions</th>
+      <th>description</th>
+      <th>icon</th>
+      <th>stations</th>
+      <th>source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-05-17</td>
+      <td>1652738400</td>
+      <td>18.3</td>
+      <td>13.3</td>
+      <td>15.3</td>
+      <td>18.3</td>
+      <td>13.3</td>
+      <td>15.3</td>
+      <td>13.3</td>
+      <td>88.1</td>
+      <td>...</td>
+      <td>05:16:23</td>
+      <td>1652757383</td>
+      <td>21:17:36</td>
+      <td>1652815056</td>
+      <td>0.52</td>
+      <td>Rain, Overcast</td>
+      <td>Cloudy skies throughout the day with a chance ...</td>
+      <td>rain</td>
+      <td>[EDHI, EDDH, EDHL, C7997]</td>
+      <td>comb</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-05-18</td>
+      <td>1652824800</td>
+      <td>25.3</td>
+      <td>11.0</td>
+      <td>17.8</td>
+      <td>25.3</td>
+      <td>11.0</td>
+      <td>17.8</td>
+      <td>13.8</td>
+      <td>79.0</td>
+      <td>...</td>
+      <td>05:14:51</td>
+      <td>1652843691</td>
+      <td>21:19:12</td>
+      <td>1652901552</td>
+      <td>0.54</td>
+      <td>Rain, Partially cloudy</td>
+      <td>Partly cloudy throughout the day with storms p...</td>
+      <td>rain</td>
+      <td>None</td>
+      <td>fcst</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2022-05-19</td>
+      <td>1652911200</td>
+      <td>25.2</td>
+      <td>13.1</td>
+      <td>18.5</td>
+      <td>25.2</td>
+      <td>13.1</td>
+      <td>18.5</td>
+      <td>15.9</td>
+      <td>86.2</td>
+      <td>...</td>
+      <td>05:13:20</td>
+      <td>1652930000</td>
+      <td>21:20:47</td>
+      <td>1652988047</td>
+      <td>0.58</td>
+      <td>Rain, Overcast</td>
+      <td>Cloudy skies throughout the day with storms po...</td>
+      <td>rain</td>
+      <td>None</td>
+      <td>fcst</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2022-05-20</td>
+      <td>1652997600</td>
+      <td>18.6</td>
+      <td>10.0</td>
+      <td>14.0</td>
+      <td>18.6</td>
+      <td>9.4</td>
+      <td>13.9</td>
+      <td>12.1</td>
+      <td>88.8</td>
+      <td>...</td>
+      <td>05:11:52</td>
+      <td>1653016312</td>
+      <td>21:22:21</td>
+      <td>1653074541</td>
+      <td>0.63</td>
+      <td>Partially cloudy</td>
+      <td>Partly cloudy throughout the day.</td>
+      <td>partly-cloudy-day</td>
+      <td>None</td>
+      <td>fcst</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2022-05-21</td>
+      <td>1653084000</td>
+      <td>16.8</td>
+      <td>9.1</td>
+      <td>12.7</td>
+      <td>16.8</td>
+      <td>6.8</td>
+      <td>12.2</td>
+      <td>10.1</td>
+      <td>85.1</td>
+      <td>...</td>
+      <td>05:10:27</td>
+      <td>1653102627</td>
+      <td>21:23:53</td>
+      <td>1653161033</td>
+      <td>0.68</td>
+      <td>Rain, Partially cloudy</td>
+      <td>Partly cloudy throughout the day with rain in ...</td>
+      <td>rain</td>
+      <td>None</td>
+      <td>fcst</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2022-05-22</td>
+      <td>1653170400</td>
+      <td>19.8</td>
+      <td>8.1</td>
+      <td>13.8</td>
+      <td>19.8</td>
+      <td>7.2</td>
+      <td>13.5</td>
+      <td>9.0</td>
+      <td>75.5</td>
+      <td>...</td>
+      <td>05:09:04</td>
+      <td>1653188944</td>
+      <td>21:25:24</td>
+      <td>1653247524</td>
+      <td>0.74</td>
+      <td>Partially cloudy</td>
+      <td>Partly cloudy throughout the day.</td>
+      <td>partly-cloudy-day</td>
+      <td>None</td>
+      <td>fcst</td>
+    </tr>
+  </tbody>
+</table>
+<p>6 rows × 36 columns</p>
+</div>
+
+
